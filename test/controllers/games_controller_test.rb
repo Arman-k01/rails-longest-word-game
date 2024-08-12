@@ -1,13 +1,14 @@
-require "test_helper"
+# test/controllers/games_controller_test.rb
+require 'test_helper'
 
 class GamesControllerTest < ActionDispatch::IntegrationTest
   test "should get new" do
-    get games_new_url
+    get new_game_url
     assert_response :success
   end
 
   test "should get score" do
-    get games_score_url
+    post score_game_url, params: { word: 'example', letters: 'A B C D E F G H I J' }
     assert_response :success
   end
 end
